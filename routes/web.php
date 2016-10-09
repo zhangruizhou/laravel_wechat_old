@@ -11,6 +11,30 @@
 |
 */
 
+
+$urls = parse_url(Request::Url());
+$host =  $urls['host'];
+$prefix = explode('.', $host)[0];
+
+if (strtolower($prefix) == 'wx') {
+    $namespace = 'Front';
+} else if(strtolower($prefix) == 'admin') {
+    $namespace = 'Admin';
+} else if(strtolower($prefix) == 'mai') {
+    $namespace = 'Seller';
+} else if(strtolower($prefix) == 'auth') {
+    $namespace = 'Auth';
+} else { //解决composer时自动查找localhost的问题
+    $namespace = 'Front';
+}
+
+//域名分组
+Route::group(array('domain' => $host, 'namespace'=>$namespace), function() use($namespace){
+    return  __DIR__.'/Routes/' . $namespace .'.php';
+});
+
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
