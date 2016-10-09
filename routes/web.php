@@ -16,7 +16,7 @@ $urls = parse_url(Request::Url());
 $host =  $urls['host'];
 $prefix = explode('.', $host)[0];
 
-if (strtolower($prefix) == 'wx') {
+if (strtolower($prefix) == 'wechat') {
     $namespace = 'Front';
 } else if(strtolower($prefix) == 'admin') {
     $namespace = 'Admin';
