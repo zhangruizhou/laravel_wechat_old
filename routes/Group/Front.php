@@ -11,4 +11,8 @@
  ***********************************************************************************/
 
 //首页
-Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
+//Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
+
+Route::get('/',function (){
+    return 'Hello World';
+});
