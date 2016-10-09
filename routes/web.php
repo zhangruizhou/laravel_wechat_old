@@ -27,6 +27,10 @@ if (strtolower($prefix) == 'wechat') {
 } else { //解决composer时自动查找localhost的问题
     $namespace = 'Front';
 }
+
+Route::get('/', function (){
+    return 'Hello Word';
+});
 //域名分组
 Route::group(array('domain' => $host, 'namespace'=>$namespace), function() use($namespace){
     return  __DIR__.'/Group/' . $namespace .'.php';
