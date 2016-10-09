@@ -31,9 +31,3 @@ if (strtolower($prefix) == 'wechat') {
 Route::group(array('domain' => $host, 'namespace'=>$namespace), function() use($namespace){
     include __DIR__.'/Group/' . $namespace .'.php';
 });
-
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
