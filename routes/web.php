@@ -27,7 +27,7 @@ if (strtolower($prefix) == 'wx') {
 } else { //解决composer时自动查找localhost的问题
     $namespace = 'Front';
 }
-echo 123;die;
+echo __DIR__.'/Routes/' . $namespace .'.php';die;
 //域名分组
 Route::group(array('domain' => $host, 'namespace'=>$namespace), function() use($namespace){
     return  __DIR__.'/Routes/' . $namespace .'.php';
