@@ -11,6 +11,10 @@
  ***********************************************************************************/
 
 //首页
+
+Route::get('/', function () {
+    return view('welcome');
+});
 //Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
 echo 555;die;
 Route::get('/',function (){
