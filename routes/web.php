@@ -29,7 +29,7 @@ if (strtolower($prefix) == 'wechat') {
 }
 //域名分组
 Route::group(array('domain' => $host, 'namespace'=>$namespace), function() use($namespace){
-    include_once  __DIR__.'/Group/' . $namespace .'.php';
+    include __DIR__.'/Group/' . $namespace .'.php';
 });
 
 /*
