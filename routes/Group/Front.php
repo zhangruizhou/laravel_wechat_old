@@ -12,7 +12,7 @@
 
 //首页
 //Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
-
+echo 555;die;
 Route::get('/',function (){
     return 'Hello World';
 });
