@@ -1,3 +1,9 @@
 <?php
 
-Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
+Route::group(['middleware'=>'seller.auth'], function (){
+
+    Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
+
+
+});
+
